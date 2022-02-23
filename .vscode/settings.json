@@ -2,6 +2,7 @@
   "files.exclude": {
     "**/build": true
   },
+  "editor.formatOnSave": true,
   "C_Cpp.clang_format_sortIncludes": false,
   "files.associations": {
     "algorithm": "cpp",

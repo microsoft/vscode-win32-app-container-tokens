@@ -17,7 +17,7 @@ void ThrowJsError(Napi::Env env, const char *msg) {
   auto errMsg = std::string(msg);
 
   const int sysMsgLen = 256;
-  char sysMsg[sysMsgLen];
+  char sysMsg[sysMsgLen] = "";
   FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
                 NULL, GetLastError(),
                 MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // Default language
@@ -33,7 +33,7 @@ BOOL addAppContainerProcessName(Napi::Env env, Napi::Array tokens,
                                 HANDLE hToken) {
   ULONG ulSessionId;
   ULONG ulReturnLength;
-  WCHAR ObjectPath[1024];
+  WCHAR ObjectPath[1024] = L"";
   std::wstringstream stringStream;
   std::wstring strPipeName;
 
@@ -56,8 +56,6 @@ BOOL addAppContainerProcessName(Napi::Env env, Napi::Array tokens,
   }
 
   strPipeName += ObjectPath;
-  strPipeName += L"\\MyTestSharedMemory";
-
   auto pipeNameU16 = std::u16string(strPipeName.begin(), strPipeName.end());
   tokens[tokens.Length()] = Napi::String::New(env, pipeNameU16.c_str());
   return true;

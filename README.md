@@ -26,8 +26,8 @@ This is a native project that can be built on Windows. It uses the [node-addon-a
 
 When using VS Code, you'll want to add the following include paths to the C++ configuration (via the **C/C++: Edit Configurations (UI)** command):
 
-- `<folder>/node_modules/node-addon-api/**`
-- `C:/Users/<USER>/AppData/Local/node-gyp/Cache/<NODE VERSION>/include/node/**`
+- `<folder>/node_modules/node-addon-api`
+- `C:/Users/<USER>/AppData/Local/node-gyp/Cache/<NODE VERSION>/include/node`
 
 ## Trademarks
 

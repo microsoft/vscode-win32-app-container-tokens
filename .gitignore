@@ -132,3 +132,5 @@ dist
 /.vscode/c_cpp_properties.json
 /dist
 /build
+
+*.tgz
