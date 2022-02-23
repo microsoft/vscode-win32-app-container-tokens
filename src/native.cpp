@@ -86,7 +86,6 @@ Napi::Value getAppContainerProcessTokens(const Napi::CallbackInfo &info) {
   auto tokens = Napi::Array::New(env);
 
   // Now walk the snapshot of processes, and gather process tokens
-  uint32_t tokenIndex = 0;
   do {
     auto hProcess =
         OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, pe32.th32ProcessID);
@@ -105,12 +104,11 @@ Napi::Value getAppContainerProcessTokens(const Napi::CallbackInfo &info) {
         if (ulIsAppContainer) {
           addAppContainerProcessName(env, tokens, hProcessToken);
         }
+        CloseHandle(hProcessToken);
       }
 
-      CloseHandle(hProcessToken);
+      CloseHandle(hProcess);
     }
-
-    CloseHandle(hProcess);
   } while (Process32Next(hProcessSnap, &pe32));
 
   CloseHandle(hProcessSnap);
