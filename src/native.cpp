@@ -1,9 +1,5 @@
 #include <windows.h>
-#include <stdio.h>
-#include <conio.h>
-#include <tchar.h>
 #include <TlHelp32.h>
-#include <vector>
 #include <string>
 #include <sstream>
 #include <napi.h>
