@@ -32,7 +32,7 @@ extends:
         testPlatforms:
           - name: Windows
             nodeVersions:
-              - 16.x
+              - 18.x
 
         testSteps:
           - script: npm ci
@@ -42,4 +42,4 @@ extends:
             displayName: Test
 
         publishPackage: ${{ parameters.publishPackage }}
-        packagePlatformName: Windows
+        packagePlatform: Windows
