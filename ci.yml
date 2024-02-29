@@ -41,5 +41,7 @@ extends:
           - script: npm test
             displayName: Test
 
+        apiScanSoftwareName: "vscode-win32-app-container-tokens"
+        apiScanSoftwareVersion: "0.1"
         publishPackage: ${{ parameters.publishPackage }}
         packagePlatform: Windows
