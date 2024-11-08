@@ -1,6 +1,6 @@
 {
   "name": "@vscode/win32-app-container-tokens",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Native win32 Node.js addon to retrieve named pipes from app containers",
   "main": "dist/index.js",
   "gypfile": true,
