@@ -10,7 +10,7 @@ resources:
     - repository: templates
       type: github
       name: microsoft/vscode-engineering
-      ref: connor4312/sep-install-rust
+      ref: main
       endpoint: Monaco
 
 parameters:

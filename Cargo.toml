@@ -11,13 +11,20 @@ crate-type = ["cdylib"]
 napi = { version = "2.12.2", default-features = false, features = ["napi4"] }
 napi-derive = "2.12.2"
 # Windows API bindings
-windows = { version = "0.48", features = [
+windows = { version = "0.60", features = [
   "Win32_Foundation",
   "Win32_Security",
   "Win32_System_Threading",
   "Win32_System_WindowsProgramming",
   "Win32_Security_Isolation",
   "Win32_System_Diagnostics_ToolHelp",
+  "Win32_System_Diagnostics_Debug",
+  "Win32_System_ProcessStatus",
+  "Win32_System_Kernel",
+  "Win32_System_Memory",
+  "Wdk",
+  "Wdk_System",
+  "Wdk_System_Threading",
 ] }
 
 [build-dependencies]
