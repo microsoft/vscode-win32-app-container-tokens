@@ -1,3 +1,4 @@
 /*
-!/dist
-!/build/Release/w32appcontainertokens.node
+!/index.js
+!/index.d.ts
+!/*.node

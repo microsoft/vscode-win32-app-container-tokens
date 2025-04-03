@@ -1,0 +1,30 @@
+[package]
+edition = "2021"
+name = "vscode_win32-app-container-tokens"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "2.12.2", default-features = false, features = ["napi4"] }
+napi-derive = "2.12.2"
+# Windows API bindings
+windows = { version = "0.48", features = [
+  "Win32_Foundation",
+  "Win32_Security",
+  "Win32_System_Threading",
+  "Win32_System_WindowsProgramming",
+  "Win32_Security_Isolation",
+  "Win32_System_Diagnostics_ToolHelp",
+] }
+
+[build-dependencies]
+napi-build = "2.0.1"
+
+[profile.release]
+strip = true
+lto = true
+opt-level = "z"
+panic = "abort"
