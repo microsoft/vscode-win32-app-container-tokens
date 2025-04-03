@@ -2,7 +2,7 @@
   "name": "@vscode/win32-app-container-tokens",
   "version": "0.2.0",
   "description": "Native win32 Node.js addon for augmenting the VS Code JavaScript debugger",
-  "main": "dist/index.js",
+  "main": "index.js",
   "types": "index.d.ts",
   "napi": {
     "name": "win32-app-container-tokens",
