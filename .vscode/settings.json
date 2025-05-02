@@ -1,10 +1,12 @@
 {
-  "files.exclude": {
-    "**/build": true
-  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnSave": true,
-
+  "files.exclude": {
+    "**/build": true
+  },
+  "git.branchProtection": [
+    "main"
+  ]
 }
