@@ -35,7 +35,7 @@ extends:
         testPlatforms:
           - name: Windows
             nodeVersions:
-              - 20.x
+              - 22.x
 
         testSteps:
           - script: npm ci
