@@ -45,6 +45,8 @@ extends:
             displayName: Test
 
         rustTargets: aarch64-pc-windows-msvc x86_64-pc-windows-msvc
+        ${{ if not(or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))) }}:
+          skipAPIScan: true
         apiScanExcludes: "package/win32-app-container-tokens.win32-arm64-msvc.node"
         apiScanSoftwareName: "vscode-win32-app-container-tokens"
         apiScanSoftwareVersion: "0.2"
